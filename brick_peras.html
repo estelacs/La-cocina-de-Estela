@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Obligamos a que se utilice el modo de visualizaciion mas avanzado configurando el fichero.htaccess o incluyendo
+		la siguiente etiqueta -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Brick Peras y Pasas</title>
+
+		<!--Para que versiones anteriores traduzcan las etiquetas html5-->
+		<!--[if lt IE 9]> <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+
+		<!--enlace a css limpieza de navegador-->
+		<link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
+
+		<!--Realizo enlace a dos ficheros css, uno para el estilo en pantalla y otro para el estilo en impresion-->
+		<link rel="stylesheet" type="text/css" href="css/stylePantalla.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="css/styleImpresion.css" media="print" />
+
+		<meta name="description" content="">
+		<meta name="author" content="Estela">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="img/logo32x32.png" sizes="32x32">
+
+		<!-- funciones con javascript-->
+
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script language="JavaScript">
+			$(document).ready(function() {
+				//cargamos la fecha personalizada en la pagina
+				var fecha = new Date();
+				var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+				var dias = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
+				var dia = dias[fecha.getDay()];
+				//nos da el numero que ocupa en la semana y lo utilizamos como posicion en array
+				var mes = meses[fecha.getMonth()];
+				//nos da el numero del mes
+				var anyo = fecha.getFullYear();
+				//nos da el año
+				var newfecha = dia + ", " + fecha.getDate() + " de " + mes + " de " + anyo;
+				$("#fecha").text(newfecha);
+
+			});
+
+		</script>
+	</head>
+
+	<body>
+		<div id="contenedor">
+			<header>
+				<!--creo un mapa de imagenes para seleccionar el logo como enlace al inicio-->
+
+				<img src="img/titulo1.png" width="876" height="150" border="0" usemap="#map" />
+
+				<map name="map">
+					<!-- #$-:Image map file created by GIMP Image Map plug-in -->
+					<!-- #$-:GIMP Image Map plug-in by Maurits Rijk -->
+					<!-- #$-:Please do not edit lines starting with "#$" -->
+					<!-- #$VERSION:2.3 -->
+					<!-- #$AUTHOR:Estela -->
+					<area shape="rect" coords="2,1,151,147" alt="Inicio" href="index.html" />
+				</map>
+			</header>
+			<nav>
+				<ul>
+					<li >
+						<a href="index.html">Inicio</a>
+
+					</li>
+
+					<li class="lugar">
+						<a class="lugar" href="recetas.html">Recetas</a>
+
+					</li>
+
+					<li >
+						<a href="niños.html">Mini-Chef</a>
+
+					</li>
+
+					<li >
+						<a href="tablas.html">Tablas</a>
+
+					</li>
+
+					<li >
+						<a href="contacto.html">Contacto</a>
+
+					</li>
+
+				</ul>
+			</nav>
+			<div id="estoy">
+				<span>Estas en: <a href="index.html" >Inicio ></a><a href="recetas.html" > Recetas ></a><a href="postres.html" > Postres ></a>Brick Peras y Pasas</span>
+			</div>
+
+			<div id="contenido">
+				<div class="col-1">
+					<div class="section receta">
+						<h2 class="titulo">Brick Peras y Pasas</h2>
+						<img class="grande" alt="Brick peras y pasas" width="300" height="180" src="img/brick_peraspasas.jpg" />
+						<img class="pequena" alt="Brick peras y pasas" width="45%" height="45%" src="img/brick_peraspasas.jpg" />
+						<h3>Ingredientes para 4 personas</h3>
+						<ul class="ingredientes" >
+							<li>
+								3 peras conferencia
+
+							</li>
+							<li>
+								4 hojas de pasta brick
+							</li>
+							<li>
+								20 g de mantequilla
+							</li>
+							<li>
+								60 g de pasas
+							</li>
+							<li>
+								azúcar glas
+							</li>
+							<li>
+								sal
+							</li>
+							<li>
+								frutos rojos
+							</li>
+							<li>
+								hojas de menta
+							</li>
+
+						</ul>
+						<h3>Preparacion</h3>
+						<p>
+							Pela las peras, trocéalas y ponlas a cocer en una cazuela sin nada de agua. Agrega las pasas y una pizca de sal. Cuécelas a fuego suave hasta que las pasas queden melosas (aproximadamente 15-20 minutos).
+
+						</p>
+						<p>
+							Añade la mantequilla y remueve con una cuchara. Deja que se enfríen.
+
+						</p>
+						<p>
+							Extiende las hojas de pasta brick y rellena colocando una porción de peras y pasas en la parte central de cada hoja. Ciérralas como si fueran unos saquitos y átalos con cuerda de cocina.
+
+						</p>
+						<p>
+							Coloca los saquitos sobre una placa de horno forrada con papel de hornear. Hornéalos a 190ºC durante 8 minutos. Espolvoréalos con el azúcar glas y adorna el plato con unos frutos rojos y unas hojas de menta. Sirve los bricks de peras y pasas.
+
+						</p>
+
+						<p>
+							Consejo:
+
+							Para que no se rompa la pasta brick podéis poner un trozo de pasta brick en la parte central de la hoja antes de rellenarlo. Y a la hora de servirlo, os recomiendo que los levantéis de la placa con una espátula.
+
+						</p>
+
+					</div>
+				</div>
+				<div class="col-2">
+					<div class="section">
+						<h3 id="fecha"></h3>
+
+						<!--se utiliza un sprite para mostrar los iconos de las redes-->
+						<div id="redsocial">
+							<p>
+								<a target="_blank" href="http://www.youtube.com/?gl=ES&hl=es"><img id="youtube" src="img/pixel.png"/></a><a target="_blank" href="https://es-es.facebook.com/"><img id="facebook" src="img/pixel.png"/></a><a target="_blank" href="https://twitter.com/"><img id="twitter" src="img/pixel.png"/></a><a target="_blank" href="https://www.google.es/"><img id="google" src="img/pixel.png"/></a><a target="_blank" href="http://es.yahoo.com/"><img id="yahoo" src="img/pixel.png"/></a>
+							</p>
+						</div>
+
+					</div>
+					<div class="section">
+						<h2>Enlaces de interes</h2>
+						<ul class="listainteres icono">
+							<li>
+								<a target="_blank" href="http://www.pequerecetas.com/receta/recetas-cocina-para-ninos/">Cocina facil para niños</a>
+							</li>
+							<li>
+								<a target="_blank" href="http://www.serpadres.es/alimentacion/recetas-ninos/42450.html">Recetas para cocinar con niños</a>
+							</li>
+							<li>
+								<a target="_blank" href="http://www.recetin.com/">Un blog dedicado a la cocina para niños</a>
+							</li>
+
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+			<footer class="impresion">
+				<span>&copy;La Cocina de Estela </span>
+			</footer>
+			<footer class="pantalla">
+				<div class="mapa">
+					<div id="columna1">
+						<dl>
+							<dt>
+								<a href="index.html">INICIO</a>
+							</dt>
+							<dt>
+								<a href="recetas.html">RECETAS</a>
+							</dt>
+							<dl>
+								<dt>
+									<a href="primeros.html">PRIMEROS</a>
+								</dt>
+								<dd>
+									<a target="" href="patatas_asadas.html">Patatas Asadas</a>
+								</dd>
+								<dd>
+									<a target="" href="coliflor_gratinada.html">Coliflor Gratinada</a>
+								</dd>
+								<dd>
+									<a target="" href="arroz_cubana.html">Arroz a la Cubana</a>
+								</dd>
+
+								<dd>
+									<a target="" href="macarrones_atun.html">Macarrones con Atun</a>
+								</dd>
+
+								<dd>
+									<a target="" href="espaguetis_salchichas.html">Espaguetis con Salchichas</a>
+
+								</dd>
+								<dt>
+									<a href="segundos.html">SEGUNDOS</a>
+								</dt>
+								<dd>
+									<a target="" href="lomo_mielmostaza.html">Lomo a la Miel y Mostaza</a>
+								</dd>
+
+								<dd>
+									<a target="" href="chicharro_horno.html">Chicharro al Horno con patatas</a>
+								</dd>
+								<dd>
+									<a target="" href="pollo_ajillochampi.html">Pollo al Ajillo con Champiñones</a>
+
+								</dd>
+
+								<dd>
+									<a target="" href="merluza_rebozada.html">Merluza Rebozada</a>
+
+								</dd>
+
+								<dd>
+									<a target="" href="sanwich_pizza.html">Sandwich Pizza</a>
+
+								</dd>
+								<dt>
+									<a href="postres.html">POSTRES</a>
+								</dt>
+								<dd>
+									<a target="" href="lomo_mielmostaza.html">Lomo a la Miel y Mostaza</a>
+								</dd>
+
+								<dd>
+									<a target="" href="chicharro_horno.html">Chicharro al Horno con patatas</a>
+								</dd>
+								<dd>
+									<a target="" href="pollo_ajillochampi.html">Pollo al Ajillo con Champiñones</a>
+
+								</dd>
+
+								<dd>
+									<a target="" href="merluza_rebozada.html">Merluza Rebozada</a>
+
+								</dd>
+
+								<dd>
+									<a target="" href="sanwich_pizza.html">Sandwich Pizza</a>
+
+								</dd>
+							</dl>
+						</dl>
+
+					</div>
+					<div id="columna2">
+						<dl>
+
+							<dt>
+								<a href="niños.html">MINI-CHEF</a>
+							</dt>
+							<dd>
+								<a target="" href="espumoso_limon.html">Espumoso de Limon</a>
+
+							</dd>
+							<dd>
+								<a target="" href="vaso_quesocrema.html">Vasos Queso Crema con Mermelada</a>
+
+							</dd>
+
+							<dd>
+								<a target="" href="palmeritas_azucar.html">Palmeritas con Azucar</a>
+
+							</dd>
+							<dd>
+								<a target="" href="sanwich_pizza.html">Sandwich Pizza</a>
+
+							</dd>
+							<dd>
+								<a target="" href="hojaldres_sanvalentin.html">Hojaldres de San Valentin</a>
+
+							</dd>
+							<dd>
+								<a target="" href="espaguetis_salchichas.html">Espaguetis con Salchichas</a>
+
+							</dd>
+							
+
+						</dl>
+					</div>
+					<div id="columna3">
+						<dl>
+							<dt>
+								<a href="tablas.html">TABLAS</a>
+							</dt>
+
+							<dt>
+								<a href="contacto.html">CONTACTO</a>
+							</dt>
+							<dt>
+								Enlaces de interes
+							</dt>
+
+							<dd>
+								<a target="_blank" href="http://www.pequerecetas.com/receta/recetas-cocina-para-ninos/">Cocina facil para niños</a>
+							</dd>
+							<dd>
+								<a target="_blank" href="http://www.serpadres.es/alimentacion/recetas-ninos/42450.html">Recetas para cocinar con niños</a>
+							</dd>
+							<dd>
+								<a target="_blank" href="http://www.recetin.com/">Un blog dedicado a la cocina para niños</a>
+							</dd>
+
+						</dl>
+
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

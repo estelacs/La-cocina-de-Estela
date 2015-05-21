@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Obligamos a que se utilice el modo de visualizaciion mas avanzado configurando el fichero.htaccess o incluyendo
+		la siguiente etiqueta -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Tablas Caloricas</title>
+
+		<!--Para que versiones anteriores traduzcan las etiquetas html5-->
+		<!--[if lt IE 9]> <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+
+		<!--enlace a css limpieza de navegador-->
+		<link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
+
+		<!--Realizo enlace a dos ficheros css, uno para el estilo en pantalla y otro para el estilo en impresion-->
+		<link rel="stylesheet" type="text/css" href="css/stylePantalla.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="css/styleImpresion.css" media="print" />
+
+		<meta name="description" content="">
+		<meta name="author" content="Estela">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="img/logo32x32.png" sizes="32x32">
+
+		<!-- funciones con javascript-->
+
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+		<script language="JavaScript">
+			$(document).ready(function() {
+				//cargamos la fecha personalizada en la pagina
+				var fecha = new Date();
+				var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+				var dias = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
+				var dia = dias[fecha.getDay()];
+				//nos da el numero que ocupa en la semana y lo utilizamos como posicion en array
+				var mes = meses[fecha.getMonth()];
+				//nos da el numero del mes
+				var anyo = fecha.getFullYear();
+				//nos da el año
+				var newfecha = dia + ", " + fecha.getDate() + " de " + mes + " de " + anyo;
+				$("#fecha").text(newfecha);
+				
+				
+				document.getElementById("pes1").onclick=aparece1;
+				document.getElementById("pes2").onclick=aparece2;
+				document.getElementById("pes3").onclick=aparece3;
+				document.getElementById("pes4").onclick=aparece4;
+
+			});
+			function aparece1() {
+				document.getElementById("elemento1").classList.remove("oculta");
+				document.getElementById("elemento1").classList.add("visible");
+				
+				document.getElementById("elemento2").classList.remove("visible");
+				document.getElementById("elemento3").classList.remove("visible");
+				document.getElementById("elemento4").classList.remove("visible");
+				document.getElementById("elemento2").classList.add("oculta");
+				document.getElementById("elemento3").classList.add("oculta");
+				document.getElementById("elemento4").classList.add("oculta");
+
+			}
+			function aparece2() {
+				document.getElementById("elemento2").classList.remove("oculta");
+				document.getElementById("elemento2").classList.add("visible");
+				
+				document.getElementById("elemento1").classList.remove("visible");
+				document.getElementById("elemento3").classList.remove("visible");
+				document.getElementById("elemento4").classList.remove("visible");
+				document.getElementById("elemento1").classList.add("oculta");
+				document.getElementById("elemento3").classList.add("oculta");
+				document.getElementById("elemento4").classList.add("oculta");
+
+			}
+			function aparece3() {
+				document.getElementById("elemento3").classList.remove("oculta");
+				document.getElementById("elemento3").classList.add("visible");
+				
+				document.getElementById("elemento2").classList.remove("visible");
+				document.getElementById("elemento1").classList.remove("visible");
+				document.getElementById("elemento4").classList.remove("visible");
+				document.getElementById("elemento2").classList.add("oculta");
+				document.getElementById("elemento1").classList.add("oculta");
+				document.getElementById("elemento4").classList.add("oculta");
+
+			}
+			function aparece4() {
+				document.getElementById("elemento4").classList.remove("oculta");
+				document.getElementById("elemento4").classList.add("visible");
+				
+				document.getElementById("elemento2").classList.remove("visible");
+				document.getElementById("elemento3").classList.remove("visible");
+				document.getElementById("elemento1").classList.remove("visible");
+				document.getElementById("elemento2").classList.add("oculta");
+				document.getElementById("elemento3").classList.add("oculta");
+				document.getElementById("elemento1").classList.add("oculta");
+
+			}
+
+		</script>
+	</head>
+
+	<body>
+		<div id="contenedor">
+			<header>
+				<!--creo un mapa de imagenes para seleccionar el logo como enlace al inicio-->
+
+				<img src="img/titulo1.png" width="876" height="150" border="0" usemap="#map" />
+
+				<map name="map">
+					<!-- #$-:Image map file created by GIMP Image Map plug-in -->
+					<!-- #$-:GIMP Image Map plug-in by Maurits Rijk -->
+					<!-- #$-:Please do not edit lines starting with "#$" -->
+					<!-- #$VERSION:2.3 -->
+					<!-- #$AUTHOR:Estela -->
+					<area shape="rect" coords="2,1,151,147" alt="Inicio" href="index.html" />
+				</map>
+			</header>
+			<nav>
+				<ul>
+					<li >
+						<a href="index.html">Inicio</a>
+
+					</li>
+
+					<li >
+						<a  href="recetas.html">Recetas</a>
+
+					</li>
+
+					<li >
+						<a href="niños.html">Mini-Chef</a>
+
+					</li>
+
+					<li class="lugar">
+						<a class="lugar" href="tablas.html">Tablas</a>
+
+					</li>
+
+					<li >
+						<a href="contacto.html">Contacto</a>
+
+					</li>
+
+				</ul>
+			</nav>
+			<div id="estoy">
+				<span>Estas en: <a href="index.html" >Inicio ></a>Tablas Caloricas</span>
+			</div>
+
+			<div id="contenido">
+				<div class="col-1">
+					<p>En esta seccion podras consultar las calorias de distintos alimentos. Encontrarás sus valores calóricos y los requerimientos nutricionales de cada alimento, tales como hidratos de cárbono, proteínas y grasas.</p>
+					<div  id="lineblock" class="section">
+						<h2 class="titulo">Tablas Caloricas</h2>
+						<ul>
+							<li id="pes1" class="gradiente " >
+								<span class="menu">Carne,Pescados y Huevos</span>
+
+							</li>
+
+							<li id="pes2" class="gradiente" >
+								<span class="menu">Frutas y Frutos Secos</span>
+
+							</li>
+
+							<li id="pes3" class="gradiente" >
+								<span class="menu">Legumbres y Verduras</span>
+
+							</li>
+
+							<li id="pes4" class="gradiente" >
+								<span class="menu">Cereales,Grasas y Lacteos</span>
+
+							</li>
+
+						</ul>
+
+					</div>
+					<div id="elemento1" class="tablas oculta">
+						<table summary="Calorias Carnes">
+							<caption>
+								Calorias en Carnes
+							</caption>
+							<thead>
+								<tr>
+									<th scope="col" id="carnes"><strong> CARNES </strong></th>
+									<th scope="col" id="calorias"> Calor&iacute;as </th>
+									<th scope="col" id="proteinas"> Prote&iacute;nas </th>
+									<th scope="col" id="lipidos"> L&iacute;pidos </th>
+									<th scope="col" id="hidratos"> Hidratos
+									de Carbono </th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row" id="ternera"> Bistec de ternera </th>
+									<td headers="ternera calorias" > 92 </td>
+									<td headers="ternera proteinas" > 20,7 </td>
+									<td headers="ternera lipidos" > 1 </td>
+									<td headers="ternera hidratos" > 0,5 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="buey"> Buey semi graso </th>
+									<td headers="buey calorias" > 160 </td>
+									<td headers="buey proteinas" > - </td>
+									<td headers="buey lipidos" > - </td>
+									<td headers="buey hidratos" > - </td>
+								</tr>
+								<tr>
+									<th scope="row" id="cabrito"> Cabrito </th>
+									<td headers="cabrito calorias" > 127 </td>
+									<td headers="cabrito proteinas" > 19,2 </td>
+									<td headers="cabrito lipidos" > 17 </td>
+									<td headers="cabrito hidratos" > 0,7 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="magro"> Cerdo carne	magra </th>
+									<td headers="magro calorias" > 146 </td>
+									<td headers="magro proteinas" > 19,9 </td>
+									<td headers="magro lipidos" > 6,8 </td>
+									<td headers="magro hidratos" > 0 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="graso"> Cerdo carne
+									grasa </th>
+									<td headers="graso calorias" >398 </td>
+									<td headers="graso proteinas" > 14,5 </td>
+									<td headers="graso lipidos" > 37,3 </td>
+									<td headers="graso hidratos" > 0 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="ciervo"> Ciervo </th>
+									<td headers="ciervo calorias" > 120 </td>
+									<td headers="ciervo proteinas" > 20,3 </td>
+									<td headers="ciervo lipidos" > 3,7 </td>
+									<td headers="ciervo hidratos" > 0,6 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="codorniz"> Codorniz </th>
+									<td headers="codorniz calorias" > 162 </td>
+									<td headers="codorniz proteinas" >25 </td>
+									<td headers="codorniz lipidos" > 6,8 </td>
+									<td headers="codorniz hidratos" > 0 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="conejo"> Conejo </th>
+									<td headers="conejo calorias" > 102-138 </td>
+									<td headers="conejo proteinas" > 21,2 </td>
+									<td headers="conejo lipidos" > 6,6 </td>
+									<td headers="conejo hidratos" > 0 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="cordero"> Cordero Lechal </th>
+									<td headers="cordero calorias" > 105 </td>
+									<td headers="cordero proteinas" > 21 </td>
+									<td headers="cordero lipidos" > 2,4 </td>
+									<td headers="cordero hidratos" > 0 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="faisan"> Fais&aacute;n </th>
+									<td headers="faisan calorias" > 144 </td>
+									<td headers="faisan proteinas" > 24,3 </td>
+									<td headers="faisan lipidos" > 5,2 </td>
+									<td headers="faisan hidratos" > 0 </td>
+								</tr>
+
+								<tr>
+									<th scope="row" id="jabali">Jabal&iacute; </th>
+									<td headers="jabali calorias" > 107 </td>
+									<td headers="jabali proteinas" > 21 </td>
+									<td headers="jabali lipidos" > 2 </td>
+									<td headers="jabali hidratos" > 0,4 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="lacon"> Lac&oacute;n </th>
+									<td headers="lacon calorias" > 361 </td>
+									<td headers="lacon proteinas" > 19,2 </td>
+									<td headers="lacon lipidos" > 31,6 </td>
+									<td headers="lacon hidratos" > 0 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="liebre">Liebre </th>
+									<td headers="liebre calorias" > 126 </td>
+									<td headers="liebre proteinas" > 22,8 </td>
+									<td headers="liebre lipidos" > 3,2 </td>
+									<td headers="liebre hidratos" > 0 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="pato"> Pato </th>
+									<td headers="pato calorias" > 288 </td>
+									<td headers="pato proteinas" > 15,9 </td>
+									<td headers="pato lipidos" > 24,9 </td>
+									<td headers="pato hidratos" > 0 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="pavo"> Pavo pechuga </th>
+									<td headers="pavo calorias" > 134 </td>
+									<td headers="pavo proteinas" > 22 </td>
+									<td headers="pavo lipidos" > 4,9 </td>
+									<td headers="pavo hidratos" > 0,4 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="perdiz"> Perdiz </th>
+									<td headers="perdiz calorias" > 120 </td>
+									<td headers="perdiz proteinas" > 25 </td>
+									<td headers="perdiz lipidos" > 1,4 </td>
+									<td headers="perdiz hidratos" > 0,5 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="pollo"> Pollo pechuga </th>
+									<td headers="pollo calorias" > 108 </td>
+									<td headers="pollo proteinas" > 22,4 </td>
+									<td headers="pollo lipidos" > 2,1 </td>
+									<td headers="pollo hidratos" > 0 </td>
+								</tr>
+
+							</tbody>
+
+						</table>
+						<table summary="Calorias Pescados">
+							<caption>
+								Calorias en Pescados
+							</caption>
+							<thead>
+								<tr>
+									<th scope="col" id="pescado"><strong> PESCADOS </strong></th>
+									<th scope="col" id="calorias"> Calor&iacute;as </th>
+									<th scope="col" id="proteinas"> Prote&iacute;nas </th>
+									<th scope="col" id="lipidos"> L&iacute;pidos </th>
+									<th scope="col" id="hidratos"> Hidratos	de Carbono </th>
+								</tr>
+							</thead>
+							<tbody>
+
+								<tr>
+									<th scope="row" id="almeja"> Almeja </th>
+									<td headers="almeja calorias" > 73 </td>
+									<td headers="almeja proteinas" > 10,2 </td>
+									<td headers="almeja lipidos" > 2,5 </td>
+									<td headers="almeja hidratos" > 2,2 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="angila"> Anguila </th>
+									<td headers="angila calorias" > 264 </td>
+									<td headers="angila proteinas" > 11,8 </td>
+									<td headers="angila lipidos" > 23,7 </td>
+									<td headers="angila hidratos" > 0,1 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="arenque"> Arenque </th>
+									<td headers="arenque calorias" > 174 </td>
+									<td headers="arenque proteinas" > 17,7 </td>
+									<td headers="arenque lipidos" > 11,5 </td>
+									<td headers="arenque hidratos" > 0 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="atun"> At&uacute;n
+									fresco </th>
+									<td headers="atun calorias" > 158 </td>
+									<td headers="atun proteinas" > 21,5 </td>
+									<td headers="atun lipidos" > 8 </td>
+									<td headers="atun hidratos" > 0 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="bacalao"> Bacalao </th>
+									<td headers="bacalao calorias" > 122 </td>
+									<td headers="bacalao proteinas" > 29 </td>
+									<td headers="bacalao lipidos" > 0,7 </td>
+									<td headers="bacalao hidratos" > 0 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="boqueron"> Boquer&oacute;n </th>
+									<td headers="boqueron calorias" > 96 </td>
+									<td headers="boqueron proteinas" > 16,8 </td>
+									<td headers="boqueron lipidos" > 2,6 </td>
+									<td headers="boqueron hidratos" > 1,5 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="caballa"> Caballa </th>
+									<td headers="caballa calorias" > 170 </td>
+									<td headers="caballa proteinas" > 17 </td>
+									<td headers="caballa lipidos" > 11,1 </td>
+									<td headers="caballa hidratos" > 0 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="calamar"> Calamar </th>
+									<td headers="calamar calorias" > 68 </td>
+									<td headers="calamar proteinas" > 12,6 </td>
+									<td headers="calamar lipidos" > 1,7 </td>
+									<td headers="calamar hidratos" > 0,7 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="dorada"> Dorada </th>
+									<td headers="dorada calorias" > 80 </td>
+									<td headers="dorada proteinas" > 19,8 </td>
+									<td headers="dorada lipidos" > 1,2 </td>
+									<td headers="dorada hidratos" > 0 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="gallo"> Gallo </th>
+									<td headers="gallo calorias" > 78 </td>
+									<td headers="gallo proteinas" > 16,2 </td>
+									<td headers="gallo lipidos" > 0,9 </td>
+									<td headers="gallo hidratos" > 1,2 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="gamba"> Gamba </th>
+									<td headers="gamba calorias" > 65 </td>
+									<td headers="gamba proteinas" > 13,6 </td>
+									<td headers="gamba lipidos" > 0,6 </td>
+									<td headers="gamba hidratos" > 2,9 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="langosta"> Langosta </th>
+									<td headers="langosta calorias" > 88 </td>
+									<td headers="langosta proteinas" > 16,2 </td>
+									<td headers="langosta lipidos" > 1,9 </td>
+									<td headers="langosta hidratos" > 1 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="lenguado"> Lenguado </th>
+									<td headers="lenguado calorias" > 82 </td>
+									<td headers="lenguado proteinas" > 16,9 </td>
+									<td headers="lenguado lipidos" > 1,7 </td>
+									<td headers="lenguado hidratos" > 0,8 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="lubina"> Lubina </th>
+									<td headers="lubina calorias" > 82 </td>
+									<td headers="lubina proteinas" > 16,6 </td>
+									<td headers="lubina lipidos" > 1,5 </td>
+									<td headers="lubina hidratos" > 0,6 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="lucio"> Lucio </th>
+									<td headers="lucio calorias" > 81 </td>
+									<td headers="lucio proteinas" > 18 </td>
+									<td headers="lucio lipidos" > 0,6 </td>
+									<td headers="lucio hidratos" > 0 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="mejillones"> Mejillones </th>
+									<td headers="mejillones calorias" > 66 </td>
+									<td headers="mejillones proteinas" > 11,7 </td>
+									<td headers="mejillones lipidos" > 2,7 </td>
+									<td headers="mejillones hidratos" > 3,4 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="merluza"> Merluza </th>
+									<td headers="merluza calorias" > 71 </td>
+									<td headers="merluza proteinas" > 17 </td>
+									<td headers="merluza lipidos" > 0,3 </td>
+									<td headers="merluza hidratos" > 0 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="mero"> Mero </th>
+									<td headers="mero calorias" > 80 </td>
+									<td headers="mero proteinas" > 17,9 </td>
+									<td headers="mero lipidos" > 0,7 </td>
+									<td headers="mero hidratos" >0,6 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="espada"> Pez espada </th>
+									<td headers="espada calorias" > 109 </td>
+									<td headers="espada proteinas" > 16,9 </td>
+									<td headers="espada lipidos" > 4,2 </td>
+									<td headers="espada hidratos" > 1 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="pulpo"> Pulpo </th>
+									<td headers="pulpo calorias" > 57 </td>
+									<td headers="pulpo proteinas" > 10,6 </td>
+									<td headers="pulpo lipidos" > 1 </td>
+									<td headers="pulpo hidratos" > 1,4 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="rodaballo"> Rodaballo </th>
+									<td headers="rodaballo calorias" > 81 </td>
+									<td headers="rodaballo proteinas" > 16,3 </td>
+									<td headers="rodaballo lipidos" > 1,3 </td>
+									<td headers="rodaballo hidratos" > 1,2 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="salmon"> Salm&oacute;n </th>
+									<td headers="salmon calorias" > 176 </td>
+									<td headers="salmon proteinas" > 18,4 </td>
+									<td headers="salmon lipidos" > 12 </td>
+									<td headers="salmon hidratos" > 0 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="salmonete"> Salmonete </th>
+									<td headers="salmonete calorias" > 123 </td>
+									<td headers="salmonete proteinas" > 15,8 </td>
+									<td headers="salmonete lipidos" > 6,2 </td>
+									<td headers="salmonete hidratos" > 1,1 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="sardina"> Sardina </th>
+									<td headers="sardina calorias" > 124 </td>
+									<td headers="sardina proteinas" > 15 </td>
+									<td headers="sardina lipidos" > 4,4 </td>
+									<td headers="sardina hidratos" > 1 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="sepia"> Sepia </th>
+									<td headers="sepia calorias" > 73 </td>
+									<td headers="sepia proteinas" > 14 </td>
+									<td headers="sepia lipidos" > 1,5 </td>
+									<td headers="sepia hidratos" > 0,7 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="trucha"> Trucha </th>
+									<td headers="trucha calorias" > 96 </td>
+									<td headers="trucha proteinas" > - </td>
+									<td headers="trucha lipidos" > - </td>
+									<td headers="trucha hidratos" > - </td>
+								</tr>
+							</tbody>
+						</table>
+						<table summary="Calorias Huevos">
+							<caption>
+								Calorias en Huevos
+							</caption>
+							<thead>
+								<tr >
+									<th scope="col" id="huevos"><strong> HUEVOS </strong></th>
+									<th scope="col" id="calorias"> Calor&iacute;as </th>
+									<th scope="col" id="proteinas"> Prote&iacute;nas </th>
+									<th scope="col" id="lipidos"> L&iacute;pidos </th>
+									<th scope="col" id="hidratos"> Hidratos
+									de Carbono </th>
+								</tr>
+							</thead>
+							<tbody>
+
+								<tr>
+									<th scope="row" id="huevo"> Huevo entero
+									(100 gr) </th>
+									<td headers="huevo calorias" > 156 </td>
+									<td headers="huevo proteinas" > 13 </td>
+									<td headers="huevo lipidos" > 11,1 </td>
+									<td headers="huevo hidratos" > 0 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="yema"> Yema (17 gr) </th>
+									<td headers="yema calorias" > 55 </td>
+									<td headers="yema proteinas" > - </td>
+									<td headers="yema lipidos" > - </td>
+									<td headers="yema hidratos" > - </td>
+								</tr>
+								<tr >
+									<th scope="row" id="clara"> Clara
+									(33 gr) </th>
+									<td headers="clara calorias" > 16 </td>
+									<td headers="clara proteinas" > - </td>
+									<td headers="clara lipidos" > - </td>
+									<td headers="clara hidratos" > - </td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div id="elemento2" class="tablas oculta">
+						<table summary="Calorias Frutas">
+							<caption>
+								Calorias en Frutas
+							</caption>
+							<thead>
+								<tr >
+									<th scope="col" id="frutas"><strong> FRUTAS </strong></th>
+									<th scope="col" id="calorias"> Calor&iacute;as </th>
+									<th scope="col" id="proteinas"> Prote&iacute;nas </th>
+									<th scope="col" id="lipidos"> L&iacute;pidos </th>
+									<th scope="col" id="hidratos"> Hidratos
+									de Carbono </th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row" id="aguacate"> Aguacate </th>
+									<td headers="aguacate calorias" > 232 </td>
+									<td headers="aguacate proteinas" > 1,9 </td>
+									<td headers="aguacate lipidos" > 23,5 </td>
+									<td headers="aguacate hidratos" > 3,2 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="albaricoque"> Albaricoque </th>
+									<td headers="albaricoque calorias" > 52 </td>
+									<td headers="albaricoque proteinas" > 0,4 </td>
+									<td headers="albaricoque lipidos" > 0,1 </td>
+									<td headers="albaricoque hidratos" > 12,5 </td>
+								</tr>
+
+								<tr>
+									<th scope="row" id="cereza"> Cereza </th>
+									<td headers="cereza calorias" > 48 </td>
+									<td headers="cereza proteinas" > 0,8 </td>
+									<td headers="cereza lipidos" > 0,1 </td>
+									<td headers="cereza hidratos" > 11,7 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="ciruela"> Ciruela </th>
+									<td headers="ciruela calorias" > 36 </td>
+									<td headers="ciruela proteinas" > 0,5 </td>
+									<td headers="ciruela lipidos" >0,1 </td>
+									<td headers="ciruela hidratos" > 8,9 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="frambuesa"> Frambuesa </th>
+									<td headers="frambuesa calorias" > 30 </td>
+									<td headers="frambuesa proteinas" > 1 </td>
+									<td headers="frambuesa lipidos" > 0,6 </td>
+									<td headers="frambuesa hidratos" > 5,6 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="fresa"> Fresa </th>
+									<td headers="fresa calorias" > 27 </td>
+									<td headers="fresa proteinas" > 0,9 </td>
+									<td headers="fresa lipidos" > 0,4 </td>
+									<td headers="fresa hidratos" > 5,6 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="granada"> Granada </th>
+									<td headers="granada calorias" > 62 </td>
+									<td headers="granada proteinas" > 0,5 </td>
+									<td headers="granada lipidos" > 0,1 </td>
+									<td headers="granada hidratos" > 15,9 </td>
+								</tr>
+
+								<tr>
+									<th scope="row" id="higo"> Higo fresco </th>
+									<td headers="higo calorias" > 47 </td>
+									<td headers="higo proteinas" > 0,9 </td>
+									<td headers="higo lipidos" > 0,2 </td>
+									<td headers="higo hidratos" > 11,2 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="limon">Lim&oacute;n </th>
+									<td headers="limon calorias" > 14 </td>
+									<td headers="limon proteinas" > 0,6 </td>
+									<td headers="limon lipidos" > 0 </td>
+									<td headers="limon hidratos" > 3,2 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="mandarina"> Mandarina </th>
+									<td headers="mandarina calorias" > 41 </td>
+									<td headers="mandarina proteinas" > 0,7 </td>
+									<td headers="mandarina lipidos" > 0,4 </td>
+									<td headers="mandarina hidratos" > 9,1 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="manzana"> Manzana </th>
+									<td headers="manzana calorias" > 45 </td>
+									<td headers="manzana proteinas" > 0,2 </td>
+									<td headers="manzana lipidos" > 0,3 </td>
+									<td headers="manzana hidratos" > 10,4 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="melocoton"> Melocot&oacute;n </th>
+									<td headers="melocoton calorias" > 30 </td>
+									<td headers="melocoton proteinas" > 0,8 </td>
+									<td headers="melocoton lipidos" > 0,1 </td>
+									<td headers="melocoton hidratos" > 6,9 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="melon"> Mel&oacute;n </th>
+									<td headers="melon calorias" > 30 </td>
+									<td headers="melon proteinas" > 0,8 </td>
+									<td headers="melon lipidos" > 0,2 </td>
+									<td headers="melon hidratos" > 7,4 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="mora"> Mora </th>
+									<td headers="mora calorias" > 35 </td>
+									<td headers="mora proteinas" > 1 </td>
+									<td headers="mora lipidos" > 0,6 </td>
+									<td headers="mora hidratos" > 6,5 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="naranja"> Naranja </th>
+									<td headers="naranja calorias" > 53 </td>
+									<td headers="naranja proteinas" > 1 </td>
+									<td headers="naranja lipidos" > 0,2 </td>
+									<td headers="naranja hidratos" > 11,7 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="piña"> Pi&ntilde;a </th>
+									<td headers="piña calorias" > 55 </td>
+									<td headers="piña proteinas" > 0,5 </td>
+									<td headers="piña lipidos" > 0,2 </td>
+									<td headers="piña hidratos" > 12,7 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="pera"> Pera </th>
+									<td headers="pera calorias" > 38 </td>
+									<td headers="pera proteinas" > 0,7 </td>
+									<td headers="pera lipidos" > 0,1 </td>
+									<td headers="pera hidratos" > 2 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="platano"> Pl&aacute;tano </th>
+									<td headers="platano calorias" > 85 </td>
+									<td headers="platano proteinas" > 1,2 </td>
+									<td headers="platano lipidos" > 0,3 </td>
+									<td headers="platano hidratos" > 19,5 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="sandia"> Sand&iacute;a </th>
+									<td headers="sandia calorias" > 15 </td>
+									<td headers="sandia proteinas" > 0,7 </td>
+									<td headers="sandia lipidos" > 0 </td>
+									<td headers="sandia hidratos" > 3,7 </td>
+								</tr>
+
+							</tbody>
+						</table>
+
+						<table summary="Calorias Frutos Secos">
+							<caption>
+								Calorias en Frutos Secos
+							</caption>
+							<thead>
+								<tr >
+									<th scope="col" id="Secos"><strong> Frutos Secos </strong></th>
+									<th scope="col" id="calorias"> Calor&iacute;as </th>
+									<th scope="col" id="proteinas"> Prote&iacute;nas </th>
+									<th scope="col" id="lipidos"> L&iacute;pidos </th>
+									<th scope="col" id="hidratos"> Hidratos
+									de Carbono </th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row" id="almendra"> Almendra </th>
+									<td headers="almendra calorias" > 499 </td>
+									<td headers="almendra proteinas" > 16 </td>
+									<td headers="almendra lipidos" > 51,4 </td>
+									<td headers="almendra hidratos" > 4 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="avellana"> Avellana </th>
+									<td headers="avellana calorias" > 625 </td>
+									<td headers="avellana proteinas" > 13 </td>
+									<td headers="avellana lipidos" > 62,9 </td>
+									<td headers="avellana hidratos" > 1,8 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="cacahuete"> Cacahuete </th>
+									<td headers="cacahuete calorias" > 452 </td>
+									<td headers="cacahuete proteinas" > 20,4 </td>
+									<td headers="cacahuete lipidos" > 25,6 </td>
+									<td headers="cacahuete hidratos" > 35 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="castana"> Casta&ntilde;a </th>
+									<td headers="castana calorias" > 349 </td>
+									<td headers="castana proteinas" > 4,7 </td>
+									<td headers="castana lipidos" > 3 </td>
+									<td headers="castana hidratos" > 89 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="datil"> D&aacute;til
+									seco </td> <td headers="datil calorias" > 256 </th>
+									<td headers="datil proteinas" > 2,7 </td>
+									<td headers="datil lipidos" > 0,6 </td>
+									<td headers="datil hidratos" > 63,1 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="hseco">Higo seco </th>
+									<td headers="hseco calorias" > 270 </td>
+									<td headers="hseco proteinas" > 3,5 </td>
+									<td headers="hseco lipidos" > 2,7 </td>
+									<td headers="hseco hidratos" > 66,6 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="nuez"> Nuez </th>
+									<td headers="nuez calorias" > 670 </td>
+									<td headers="nuez proteinas" > 15,6 </td>
+									<td headers="nuez lipidos" > 63,3 </td>
+									<td headers="nuez hidratos" > 11,2 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="pinon"> Pi&ntilde;&oacute;n </th>
+									<td headers="pinon calorias" > 568 </td>
+									<td headers="pinon proteinas" > 29,6 </td>
+									<td headers="pinon lipidos" > 47,8 </td>
+									<td headers="pinon hidratos" > 5 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="pistacho"> Pistacho </th>
+									<td headers="pistacho calorias" > 600 </td>
+									<td headers="pistacho proteinas" > - </td>
+									<td headers="pistacho lipidos" > - </td>
+									<td headers="pistacho hidratos" > - </td>
+								</tr>
+								<tr>
+									<th scope="row" id="pasa"> Uva Pasa </th>
+									<td headers="pasa calorias" > 301 </td>
+									<td headers="pasa proteinas" > 1,9 </td>
+									<td headers="pasa lipidos" > 0,6 </td>
+									<td headers="pasa hidratos" > 72 </td>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+					<div id="elemento3" class="tablas oculta">
+						<table summary="Calorias Verduras y Hortalizas">
+							<caption>
+								Calorias en Verduras y Hortalizas
+							</caption>
+							<thead>
+								<tr >
+									<th scope="col" id="verduras"><strong> VERDURAS Y HORTALIZAS </strong></th>
+									<th scope="col" id="calorias"> Calor&iacute;as </th>
+									<th scope="col" id="proteinas"> Prote&iacute;nas </th>
+									<th scope="col" id="lipidos"> L&iacute;pidos </th>
+									<th scope="col" id="hidratos"> Hidratos
+									de Carbono </th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row" id="ajo">Ajo</th>
+									<td headers="ajo calorias" >124</td>
+									<td headers="ajo proteinas" >6</td>
+									<td headers="ajo lipidos" >0,1</td>
+									<td headers="ajo hidratos" >26,3</td>
+								</tr>
+								<tr>
+									<th scope="row" id="alcachofa">Alcachofa</th>
+									<td headers="alcachofa calorias" >17</td>
+									<td headers="alcachofa proteinas" >1,4</td>
+									<td headers="alcachofa lipidos" >0,2</td>
+									<td headers="alcachofa hidratos" >2,3</td>
+								</tr>
+
+								<tr>
+									<th scope="row" id="berenjena">Berenjena</th>
+									<td headers="berenjena calorias" >16</td>
+									<td headers="berenjena proteinas" >1,1</td>
+									<td headers="berenjena lipidos" >0,1</td>
+									<td headers="berenjena hidratos" >2,6</td>
+								</tr>
+
+								<tr>
+									<th scope="row" id="brecol">Br&eacute;col</th>
+									<td headers="brecol calorias" >31</td>
+									<td headers="brecol proteinas" >3,3</td>
+									<td headers="brecol lipidos" >0,2</td>
+									<td headers="brecol hidratos" >4</td>
+								</tr>
+								<tr>
+									<th scope="row" id="calabacin">Calabac&iacute;n</th>
+									<td headers="calabacin calorias" >12</td>
+									<td headers="calabacin proteinas" >1,3</td>
+									<td headers="calabacin lipidos" >0,1</td>
+									<td headers="calabacin hidratos" >1,4</td>
+								</tr>
+								<tr>
+									<th scope="row" id="calabaza">Calabaza</th>
+									<td headers="calabaza calorias" >18</td>
+									<td headers="calabaza proteinas" >1,1</td>
+									<td headers="calabaza lipidos" >0,1</td>
+									<td headers="calabaza hidratos" >3,5</td>
+								</tr>
+								<tr>
+									<th scope="row" id="cebolla">Cebolla</th>
+									<td headers="cebolla calorias" >24</td>
+									<td headers="cebolla proteinas" >1</td>
+									<td headers="cebolla lipidos" >0</td>
+									<td headers="cebolla hidratos" >5,2</td>
+								</tr>
+								<tr>
+									<th scope="row" id="lombarda">Col lombarda </th>
+									<td headers="lombarda calorias" >20</td>
+									<td headers="lombarda proteinas" >1,9</td>
+									<td headers="lombarda lipidos" >0,2</td>
+									<td headers="lombarda hidratos" >3,4</td>
+								</tr>
+								<tr>
+									<th scope="row" id="bruselas">Coles de Bruselas</th>
+									<td headers="bruselas calorias" >31</td>
+									<td headers="bruselas proteinas" >4,2</td>
+									<td headers="bruselas lipidos" >0,5</td>
+									<td headers="bruselas hidratos" >4,3</td>
+								</tr>
+								<tr>
+									<th scope="row" id="coliflor">Coliflor</th>
+									<td headers="coliflor calorias" >25</td>
+									<td headers="coliflor proteinas" >3,2</td>
+									<td headers="coliflor lipidos" >0,2</td>
+									<td headers="coliflor hidratos" >2,7</td>
+								</tr>
+								<tr>
+									<th scope="row" id="esparragos">Esp&aacute;rrago</th>
+									<td headers="esparragos calorias" >27</td>
+									<td headers="esparragos proteinas" >3,6</td>
+									<td headers="esparragos lipidos" >0,2</td>
+									<td headers="esparragos hidratos" >2,9</td>
+								</tr>
+								<tr>
+									<th scope="row" id="espinacas">Espinaca</th>
+									<td headers="espinacas calorias" >31</td>
+									<td headers="espinacas proteinas" >3,4</td>
+									<td headers="espinacas lipidos" >0,7</td>
+									<td headers="espinacas hidratos" >3</td>
+								</tr>
+								<tr>
+									<th scope="row" id="guisantes">Guisantes frescos </th>
+									<td headers="guisantes calorias" >70</td>
+									<td headers="guisantes proteinas" >7</td>
+									<td headers="guisantes lipidos" >0,2</td>
+									<td headers="guisantes hidratos" >10,6</td>
+								</tr>
+								<tr>
+									<th scope="row" id="lechuga">Lechuga</th>
+									<td headers="lechuga calorias" >19</td>
+									<td headers="lechuga proteinas" >1,8</td>
+									<td headers="lechuga lipidos" >0,4</td>
+									<td headers="lechuga hidratos" >2,2</td>
+								</tr>
+								<tr>
+									<th scope="row" id="nabo">Nabo</th>
+									<td headers="nabo calorias" >16</td>
+									<td headers="nabo proteinas" >1</td>
+									<td headers="nabo lipidos" >0</td>
+									<td headers="nabo hidratos" >3,3</td>
+								</tr>
+								<tr>
+									<th scope="row" id="patatas">Patata</th>
+									<td headers="patatas calorias" >80</td>
+									<td headers="patatas proteinas" >2,1</td>
+									<td headers="patatas lipidos" >1</td>
+									<td headers="patatas hidratos" >18</td>
+								</tr>
+								<tr>
+									<th scope="row" id="pepino">Pepino</th>
+									<td headers="pepino calorias" >10,4</td>
+									<td headers="pepino proteinas" >0,7</td>
+									<td headers="pepino lipidos" >0,1</td>
+									<td headers="pepino hidratos" >2</td>
+								</tr>
+								<tr>
+									<th scope="row" id="puerro">Puerro</th>
+									<td headers="puerro calorias" >26</td>
+									<td headers="puerro proteinas" >2,1</td>
+									<td headers="puerro lipidos" >0,1</td>
+									<td headers="puerro hidratos" >6</td>
+								</tr>
+								<tr>
+									<th scope="row" id="remolacha">Remolacha</th>
+									<td headers="remolacha calorias" >42</td>
+									<td headers="remolacha proteinas" >1,5</td>
+									<td headers="remolacha lipidos" >0,1</td>
+									<td headers="remolacha hidratos" >8,2</td>
+								</tr>
+								<tr>
+									<th scope="row" id="repollo">Repollo</th>
+									<td headers="repollo calorias" >19</td>
+									<td headers="repollo proteinas" >2,1</td>
+									<td headers="repollo lipidos" >0,1</td>
+									<td headers="repollo hidratos" >2,5</td>
+								</tr>
+								<tr>
+									<th scope="row" id="seta"> Seta</th>
+									<td headers="seta calorias" >-</td>
+									<td headers="seta proteinas" > 4,6</td>
+									<td headers="seta lipidos" > 0,4</td>
+									<td headers="seta hidratos" > 5,2</td>
+								</tr>
+								<tr>
+									<th scope="row" id="tomate">Tomate</th>
+									<td headers="tomate calorias" >16</td>
+									<td headers="tomate proteinas" >1</td>
+									<td headers="tomate lipidos" >0,2</td>
+									<td headers="tomate hidratos" >2,9</td>
+								</tr>
+								<tr>
+									<th scope="row" id="trufa"> Trufa</th>
+									<td headers="trufa calorias" > 30</td>
+									<td headers="trufa proteinas" > 6</td>
+									<td headers="trufa lipidos" > 0,5</td>
+									<td headers="trufa hidratos" > 0,7</td>
+								</tr>
+								<tr>
+									<th scope="row" id="zanahoria">Zanahoria</th>
+									<td headers="zanahoria calorias" >37</td>
+									<td headers="zanahoria proteinas" >1</td>
+									<td headers="zanahoria lipidos" >0,2</td>
+									<td headers="zanahoria hidratos" >7,8</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<table summary="Calorias Legumbres">
+							<caption>
+								Calorias en Legumbres
+							</caption>
+							<thead>
+								<tr >
+									<th scope="col" id="legumbres"><strong> LEGUMBRES </strong></th>
+									<th scope="col" id="calorias"> Calor&iacute;as </th>
+									<th scope="col" id="proteinas"> Prote&iacute;nas </th>
+									<th scope="col" id="lipidos"> L&iacute;pidos </th>
+									<th scope="col" id="hidratos"> Hidratos
+									de Carbono </th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row" id="alubia">Alubia (jud&iacute;a
+									seca) </th>
+									<td headers="alubia calorias" >316</td>
+									<td headers="alubia proteinas" >23</td>
+									<td headers="alubia lipidos" >1,3</td>
+									<td headers="alubia hidratos" >61</td>
+								</tr>
+								<tr>
+									<th scope="row" id="garbanzo">Garbanzo</th>
+									<td headers="garbanzo calorias" >338</td>
+									<td headers="garbanzo proteinas" >21,8</td>
+									<td headers="garbanzo lipidos" >4,9</td>
+									<td headers="garbanzo hidratos" >54,3</td>
+								</tr>
+
+								<tr>
+									<th scope="row" id="haba">Haba seca</th>
+									<td headers="haba calorias" >304</td>
+									<td headers="haba proteinas" >27</td>
+									<td headers="haba lipidos" >2,4</td>
+									<td headers="haba hidratos" >46,5</td>
+								</tr>
+								<tr>
+									<th scope="row" id="lenteja">Lenteja</th>
+									<td headers="lenteja calorias" >325</td>
+									<td headers="lenteja proteinas" >25</td>
+									<td headers="lenteja lipidos" >2,5</td>
+									<td headers="lenteja hidratos" >54</td>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+					<div id="elemento4" class="tablas oculta">
+						<table summary="Calorias Cereales y Derivados">
+							<caption>
+								Calorias en Cereales y Derivados
+							</caption>
+							<thead>
+								<tr >
+									<th scope="col" id="cereales"><strong> CEREALES Y DERIVADOS </strong></th>
+									<th scope="col" id="calorias"> Calor&iacute;as </th>
+									<th scope="col" id="proteinas"> Prote&iacute;nas </th>
+									<th scope="col" id="lipidos"> L&iacute;pidos </th>
+									<th scope="col" id="hidratos"> Hidratos
+									de Carbono </th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row" id="arroz">Arroz</th>
+									<td headers="arroz calorias" >362</td>
+									<td headers="arroz proteinas" >7</td>
+									<td headers="arroz lipidos" >0,6</td>
+									<td headers="arroz hidratos" >87,6</td>
+								</tr>
+								<tr>
+									<th scope="row" id="cebada">Cebada</th>
+									<td headers="cebada calorias" >373</td>
+									<td headers="cebada proteinas" >10,4</td>
+									<td headers="cebada lipidos" >1,4</td>
+									<td headers="cebada hidratos" >82,3</td>
+								</tr>
+								<tr>
+									<th scope="row" id="centeno">Centeno</th>
+									<td headers="centeno calorias" >350</td>
+									<td headers="centeno proteinas" >9,4</td>
+									<td headers="centeno lipidos" >1</td>
+									<td headers="centeno hidratos" >76</td>
+								</tr>
+								<tr>
+									<th scope="row" id="copos">Copos de Maiz</th>
+									<td headers="copos calorias" >372</td>
+									<td headers="copos proteinas" >7,6</td>
+									<td headers="copos lipidos" >1</td>
+									<td headers="copos hidratos" >85,2</td>
+								</tr>
+
+								<tr>
+									<th scope="row" id="galletas">Galleta tipo  Mar&iacute;a</td> <td headers="galletas calorias" >409</th>
+									<td headers="galletas proteinas" >6,8</td>
+									<td headers="galletas lipidos" >8,1</td>
+									<td headers="galletas hidratos" >82,3</td>
+								</tr>
+								<tr>
+									<th scope="row" id="harina">Harina</th>
+									<td headers="harina calorias" >345</td>
+									<td headers="harina proteinas" >11</td>
+									<td headers="harina lipidos" >0,7</td>
+									<td headers="harina hidratos" >73,6</td>
+								</tr>
+								<tr>
+									<th scope="row" id="maiz">Maiz</th>
+									<td headers="maiz calorias" >363</td>
+									<td headers="maiz proteinas" >9,2</td>
+									<td headers="maiz lipidos" >3,8</td>
+									<td headers="maiz hidratos" >73</td>
+								</tr>
+								<tr>
+									<th scope="row" id="panblanco">Pan blanco</th>
+									<td headers="panblanco calorias" >270</td>
+									<td headers="panblanco proteinas" >8,1</td>
+									<td headers="panblanco lipidos" >0,5</td>
+									<td headers="panblanco hidratos" >64</td>
+								</tr>
+								<tr>
+									<th scope="row" id="panintegral">Pan integral </th>
+									<td headers="panintegral calorias" >230</td>
+									<td headers="panintegral proteinas" >9</td>
+									<td headers="panintegral lipidos" >1</td>
+									<td headers="panintegral hidratos" >47,5</td>
+								</tr>
+								<tr>
+									<th scope="row" id="pantostado">Pan tostado</th>
+									<td headers="pantostado calorias" >420</td>
+									<td headers="pantostado proteinas" >11,3</td>
+									<td headers="pantostado lipidos" >6</td>
+									<td headers="pantostado hidratos" >83</td>
+								</tr>
+								<tr>
+									<th scope="row" id="pasta">Pasta al huevo</th>
+									<td headers="pasta calorias" >368</td>
+									<td headers="pasta proteinas" >19</td>
+									<td headers="pasta lipidos" >0,2</td>
+									<td headers="pasta hidratos" >73,4</td>
+								</tr>
+
+								<tr>
+									<th scope="row" id="polenta">Polenta (harina de maiz)</th>
+									<td headers="polenta calorias" >358</td>
+									<td headers="polenta proteinas" >8,7</td>
+									<td headers="polenta lipidos" >2,7</td>
+									<td headers="polenta hidratos" >79,8</td>
+								</tr>
+								<tr>
+									<th scope="row" id="semola">Semola</th>
+									<td headers="semola calorias" >361</td>
+									<td headers="semola proteinas" >11,5</td>
+									<td headers="semola lipidos" >0,5</td>
+									<td headers="semola hidratos" >77,6</td>
+								</tr>
+								<tr>
+									<th scope="row" id="tapioca">Tapioca</th>
+									<td headers="tapioca calorias" >363</td>
+									<td headers="tapioca proteinas" >0,6</td>
+									<td headers="tapioca lipidos" >0,2</td>
+									<td headers="tapioca hidratos" >86,4</td>
+								</tr>
+								<tr>
+									<th scope="row" id="trigo">Trigo duro</th>
+									<td headers="trigo calorias" >361</td>
+									<td headers="trigo proteinas" >13</td>
+									<td headers="trigo lipidos" >2,9</td>
+									<td headers="trigo hidratos" >70,8</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<table summary="Calorias Grasas">
+							<caption>
+								Calorias en Grasas
+							</caption>
+							<thead>
+								<tr >
+									<th scope="col" id="grasas"><strong> GRASAS </strong></th>
+									<th scope="col" id="calorias"> Calor&iacute;as </th>
+									<th scope="col" id="proteinas"> Prote&iacute;nas </th>
+									<th scope="col" id="lipidos"> L&iacute;pidos </th>
+									<th scope="col" id="hidratos"> Hidratos
+									de Carbono </th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row" id="aceiteoliva"> Aceite de oliva </th>
+									<td headers="aceiteoliva calorias" > 900 </td>
+									<td headers="aceiteoliva proteinas" > 0 </td>
+									<td headers="aceiteoliva lipidos" > 100 </td>
+									<td headers="aceiteoliva hidratos" > 0 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="acitesemillas"> Aceite de semillas </th>
+									<td headers="acitesemillas calorias" > 900 </td>
+									<td headers="acitesemillas proteinas" > 0 </td>
+									<td headers="acitesemillas lipidos" >100 </td>
+									<td headers="acitesemillas hidratos" > 0 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="mantequilla"> Mantequilla </th>
+									<td headers="mantequilla calorias" > 750 </td>
+									<td headers="mantequilla proteinas" > 0,6 </td>
+									<td headers="mantequilla lipidos" > 83 </td>
+									<td headers="mantequilla hidratos" > 0,3 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="manteca"> Manteca de cerdo </th>
+									<td headers="manteca calorias" > 891 </td>
+									<td headers="manteca proteinas" > 0,3 </td>
+									<td headers="manteca lipidos" > 82,8 </td>
+									<td headers="manteca hidratos" > 0,2 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="margarina"> Margarina </th>
+									<td headers="margarina calorias" > 747 </td>
+									<td headers="margarina proteinas" > 0 </td>
+									<td headers="margarina lipidos" > 99 </td>
+									<td headers="margarina hidratos" > 0,3 </td>
+								</tr>
+							</tbody>
+						</table>
+						<table summary="Calorias Lacteos">
+							<caption>
+								Calorias en Lacteos
+							</caption>
+							<thead>
+								<tr >
+									<th scope="col" id="lacteos"><strong> LACTEOS </strong></th>
+									<th scope="col" id="calorias"> Calor&iacute;as </th>
+									<th scope="col" id="proteinas"> Prote&iacute;nas </th>
+									<th scope="col" id="lipidos"> L&iacute;pidos </th>
+									<th scope="col" id="hidratos"> Hidratos
+									de Carbono </th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row" id="lechentera"> Leche entera </th>
+									<td headers="lechentera calorias" > 63 </td>
+									<td headers="lechentera proteinas" > 3,2 </td>
+									<td headers="lechentera lipidos" > 3,7 </td>
+									<td headers="lechentera hidratos" > 4,6 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="lechesemi"> Leche semidesnatada </th>
+									<td headers="lechesemi calorias" > 49 </td>
+									<td headers="lechesemi proteinas" > 3,5 </td>
+									<td headers="lechesemi lipidos" > 1,8 </td>
+									<td headers="lechesemi hidratos" > 5 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="lechedesnatada"> Leche desnatada </th>
+									<td headers="lechedesnatada calorias" > 33 </td>
+									<td headers="lechedesnatada proteinas" > 3,4 </td>
+									<td headers="lechedesnatada lipidos" > 0,2 </td>
+									<td headers="lechedesnatada hidratos" > 4,7 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="yogur"> Yogur entero </th>
+									<td headers="yogur calorias" > 61 </td>
+									<td headers="yogur proteinas" > 3,3 </td>
+									<td headers="yogur lipidos" > 3,5 </td>
+									<td headers="yogur hidratos" > 4 </td>
+								</tr>
+
+								<tr>
+									<th scope="row" id="nata"> Nata </th>
+									<td headers="nata calorias" > 337 </td>
+									<td headers="nata proteinas" > 2,3 </td>
+									<td headers="nata lipidos" > 35 </td>
+									<td headers="nata hidratos" > 3,4 </td>
+								</tr>
+							</tbody>
+						</table>
+						<table summary="Calorias Quesos">
+							<caption>
+								Calorias en Quesos
+							</caption>
+							<thead>
+								<tr >
+									<th scope="col" id="quesos"><strong> QUESOS </strong></th>
+									<th scope="col" id="calorias"> Calor&iacute;as </th>
+									<th scope="col" id="proteinas"> Prote&iacute;nas </th>
+									<th scope="col" id="lipidos"> L&iacute;pidos </th>
+									<th scope="col" id="hidratos"> Hidratos
+									de Carbono </th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row" id="brie"> Brie </th>
+									<td headers="brie calorias" > 263 </td>
+									<td headers="brie proteinas" > 17 </td>
+									<td headers="brie lipidos" > 21 </td>
+									<td headers="brie hidratos" > 1,67 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="camembert">Camembert </th>
+									<td headers="camembert calorias" > 301 </td>
+									<td headers="camembert proteinas" > 20,5 </td>
+									<td headers="camembert lipidos" > 25,7 </td>
+									<td headers="camembert hidratos" > 0,9 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="cheddar"> Cheddar </th>
+									<td headers="cheddar calorias" > 381 </td>
+									<td headers="cheddar proteinas" > 25 </td>
+									<td headers="cheddar lipidos" > 31 </td>
+									<td headers="cheddar hidratos" > 0,5 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="edam"> Edam </th>
+									<td headers="edam calorias" > 306 </td>
+									<td headers="edam proteinas" > 26 </td>
+									<td headers="edam lipidos" > 22 </td>
+									<td headers="edam hidratos" > 1 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="emmental"> Emmental </th>
+									<td headers="emmental calorias" > 404 </td>
+									<td headers="emmental proteinas" > 28,5 </td>
+									<td headers="emmental lipidos" > 30,6 </td>
+									<td headers="emmental hidratos" > 3,6 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="gruyere"> Gruy&egrave;re </th>
+									<td headers="gruyere calorias" >393 </td>
+									<td headers="gruyere proteinas" > 29 </td>
+									<td headers="gruyere lipidos" > 30 </td>
+									<td headers="gruyere hidratos" > 1,5 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="mozzarella"> Mozzarella </th>
+									<td headers="mozzarella calorias" > 245 </td>
+									<td headers="mozzarella proteinas" > 19,9 </td>
+									<td headers="mozzarella lipidos" > 16,1 </td>
+									<td headers="mozzarella hidratos" > 4,9 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="parmesano"> Parmesano </td> <td headers="parmesano calorias" > 374 </td><td headers="parmesano proteinas" > 36 </td><td headers="parmesano lipidos" > 25,6 </td><td headers="parmesano hidratos" > - </td>
+								</tr>
+								<tr>
+									<th scope="row" id="oveja"> Queso de Oveja </td> <td headers="oveja calorias" > 380 </td><td headers="oveja proteinas" > 28,2 </td><td headers="oveja lipidos" > 29,5 </td><td headers="oveja hidratos" > - </td>
+								</tr>
+								<tr>
+									<th scope="row" id="requeson"> Reques&oacute;n </th>
+									<td headers="requeson calorias" > 96 </td>
+									<td headers="requeson proteinas" > 13,6 </td>
+									<td headers="requeson lipidos" > 4 </td>
+									<td headers="requeson hidratos" > 1,4 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="roquefort"> Roquefort </th>
+									<td headers="roquefort calorias" > 413 </td>
+									<td headers="roquefort proteinas" > 23 </td>
+									<td headers="roquefort lipidos" > 35 </td>
+									<td headers="roquefort hidratos" > 2 </td>
+								</tr>
+							</tbody>
+						</table>
+						<table summary="Calorias Otros">
+							<caption>
+								Calorias en Otros Alimentos
+							</caption>
+							<thead>
+								<tr >
+									<th scope="col" id="otros"><strong> OTROS </strong></th>
+									<th scope="col" id="calorias"> Calor&iacute;as </th>
+									<th scope="col" id="proteinas"> Prote&iacute;nas </th>
+									<th scope="col" id="lipidos"> L&iacute;pidos </th>
+									<th scope="col" id="hidratos"> Hidratos
+									de Carbono </th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row" id="chocolate"> Chocolate </th>
+									<td headers="chocolate calorias" > 564 </td>
+									<td headers="chocolate proteinas" > 8,9 </td>
+									<td headers="chocolate lipidos" > 37,9 </td>
+									<td headers="chocolate hidratos" > 50,8 </td>
+								</tr>
+								<tr>
+									<th scope="row" id="miel"> Miel </th>
+									<td headers="miel calorias" > 300 </td>
+									<td headers="miel proteinas" > 0,6 </td>
+									<td headers="miel lipidos" > 0 </td>
+									<td headers="miel hidratos" > 80 </td>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+				<div class="col-2">
+					<div class="section">
+						<h3 id="fecha"></h3>
+
+						<!--se utiliza un sprite para mostrar los iconos de las redes-->
+						<div id="redsocial">
+							<p>
+								<a target="_blank" href="http://www.youtube.com/?gl=ES&hl=es"><img id="youtube" src="img/pixel.png"/></a><a target="_blank" href="https://es-es.facebook.com/"><img id="facebook" src="img/pixel.png"/></a><a target="_blank" href="https://twitter.com/"><img id="twitter" src="img/pixel.png"/></a><a target="_blank" href="https://www.google.es/"><img id="google" src="img/pixel.png"/></a><a target="_blank" href="http://es.yahoo.com/"><img id="yahoo" src="img/pixel.png"/></a>
+							</p>
+						</div>
+
+					</div>
+					<div class="section">
+						<h2>Enlaces de interes</h2>
+						<ul class="listainteres icono">
+							<li>
+								<a target="_blank" href="http://www.pequerecetas.com/receta/recetas-cocina-para-ninos/">Cocina facil para niños</a>
+							</li>
+							<li>
+								<a target="_blank" href="http://www.serpadres.es/alimentacion/recetas-ninos/42450.html">Recetas para cocinar con niños</a>
+							</li>
+							<li>
+								<a target="_blank" href="http://www.recetin.com/">Un blog dedicado a la cocina para niños</a>
+							</li>
+
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+			<footer class="impresion">
+				<span>&copy;La Cocina de Estela </span>
+			</footer>
+			<footer class="pantalla">
+				<div class="mapa">
+					<div id="columna1">
+						<dl>
+							<dt>
+								<a href="index.html">INICIO</a>
+							</dt>
+							<dt>
+								<a href="recetas.html">RECETAS</a>
+							</dt>
+							<dl>
+								<dt>
+									<a href="primeros.html">PRIMEROS</a>
+								</dt>
+								<dd>
+									<a target="" href="patatas_asadas.html">Patatas Asadas</a>
+								</dd>
+								<dd>
+									<a target="" href="coliflor_gratinada.html">Coliflor Gratinada</a>
+								</dd>
+								<dd>
+									<a target="" href="arroz_cubana.html">Arroz a la Cubana</a>
+								</dd>
+
+								<dd>
+									<a target="" href="macarrones_atun.html">Macarrones con Atun</a>
+								</dd>
+
+								<dd>
+									<a target="" href="espaguetis_salchichas.html">Espaguetis con Salchichas</a>
+
+								</dd>
+								<dt>
+									<a href="segundos.html">SEGUNDOS</a>
+								</dt>
+								<dd>
+									<a target="" href="lomo_mielmostaza.html">Lomo a la Miel y Mostaza</a>
+								</dd>
+
+								<dd>
+									<a target="" href="chicharro_horno.html">Chicharro al Horno con patatas</a>
+								</dd>
+								<dd>
+									<a target="" href="pollo_ajillochampi.html">Pollo al Ajillo con Champiñones</a>
+
+								</dd>
+
+								<dd>
+									<a target="" href="merluza_rebozada.html">Merluza Rebozada</a>
+
+								</dd>
+
+								<dd>
+									<a target="" href="sanwich_pizza.html">Sandwich Pizza</a>
+
+								</dd>
+								<dt>
+									<a href="postres.html">POSTRES</a>
+								</dt>
+								<dd>
+									<a target="" href="lomo_mielmostaza.html">Lomo a la Miel y Mostaza</a>
+								</dd>
+
+								<dd>
+									<a target="" href="chicharro_horno.html">Chicharro al Horno con patatas</a>
+								</dd>
+								<dd>
+									<a target="" href="pollo_ajillochampi.html">Pollo al Ajillo con Champiñones</a>
+
+								</dd>
+
+								<dd>
+									<a target="" href="merluza_rebozada.html">Merluza Rebozada</a>
+
+								</dd>
+
+								<dd>
+									<a target="" href="sanwich_pizza.html">Sandwich Pizza</a>
+
+								</dd>
+							</dl>
+						</dl>
+
+					</div>
+					<div id="columna2">
+						<dl>
+
+							<dt>
+								<a href="niños.html">MINI-CHEF</a>
+							</dt>
+							<dd>
+								<a target="" href="espumoso_limon.html">Espumoso de Limon</a>
+
+							</dd>
+							<dd>
+								<a target="" href="vaso_quesocrema.html">Vasos Queso Crema con Mermelada</a>
+
+							</dd>
+
+							<dd>
+								<a target="" href="palmeritas_azucar.html">Palmeritas con Azucar</a>
+
+							</dd>
+							<dd>
+								<a target="" href="sanwich_pizza.html">Sandwich Pizza</a>
+
+							</dd>
+							<dd>
+								<a target="" href="hojaldres_sanvalentin.html">Hojaldres de San Valentin</a>
+
+							</dd>
+							<dd>
+								<a target="" href="espaguetis_salchichas.html">Espaguetis con Salchichas</a>
+
+							</dd>
+							
+
+						</dl>
+					</div>
+					<div id="columna3">
+						<dl>
+							<dt>
+								<a href="tablas.html">TABLAS</a>
+							</dt>
+
+							<dt>
+								<a href="contacto.html">CONTACTO</a>
+							</dt>
+							<dt>
+								Enlaces de interes
+							</dt>
+
+							<dd>
+								<a target="_blank" href="http://www.pequerecetas.com/receta/recetas-cocina-para-ninos/">Cocina facil para niños</a>
+							</dd>
+							<dd>
+								<a target="_blank" href="http://www.serpadres.es/alimentacion/recetas-ninos/42450.html">Recetas para cocinar con niños</a>
+							</dd>
+							<dd>
+								<a target="_blank" href="http://www.recetin.com/">Un blog dedicado a la cocina para niños</a>
+							</dd>
+
+						</dl>
+
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

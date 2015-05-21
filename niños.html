@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Obligamos a que se utilice el modo de visualizaciion mas avanzado configurando el fichero.htaccess o incluyendo
+		la siguiente etiqueta -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>MiniChef</title>
+
+		<!--Para que versiones anteriores traduzcan las etiquetas html5-->
+		<!--[if lt IE 9]> <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+
+		<!--enlace a css limpieza de navegador-->
+		<link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
+
+		<!--Realizo enlace a dos ficheros css, uno para el estilo en pantalla y otro para el estilo en impresion-->
+		<link rel="stylesheet" type="text/css" href="css/stylePantalla.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="css/styleImpresion.css" media="print" />
+
+		<meta name="description" content="">
+		<meta name="author" content="Estela">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="img/logo32x32.png" sizes="32x32">
+
+		<!-- funciones con javascript-->
+
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script language="JavaScript">
+			window.onload = init;
+			$(document).ready(function() {
+				//cargamos la fecha personalizada en la pagina
+				var fecha = new Date();
+				var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+				var dias = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
+				var dia = dias[fecha.getDay()];
+				//nos da el numero que ocupa en la semana y lo utilizamos como posicion en array
+				var mes = meses[fecha.getMonth()];
+				//nos da el numero del mes
+				var anyo = fecha.getFullYear();
+				//nos da el año
+				var newfecha = dia + ", " + fecha.getDate() + " de " + mes + " de " + anyo;
+				$("#fecha").text(newfecha);
+
+			});
+
+			var contexto;
+			function init() {
+				//Accedemosal elemento canvas
+				var elemento = document.getElementById('micanvas');
+				//Comprobación sobre si encontramos un elemento
+				//y podemos extraer su contexto con getContext(), que indica compatibilidad con canvas
+				if (elemento && elemento.getContext) {
+					//Accedo al contexto de '2d' de este canvas, necesario para dibujar
+					contexto = elemento.getContext('2d');
+					if (contexto) {
+						imagen = new Image();
+						imagen.src = "img/cocinero.png";
+						imagen.onload = function() {
+							// cargada la imagen la pintamos en el canvas
+							//indicamos posicion desde la que pintamos y la medida(redimensiona)
+							contexto.drawImage(imagen, 0, 0, 200, 300);
+							setInterval(mensaje, 9000);
+
+						};
+
+					}
+				}
+			}
+
+			function bocadillo() {
+				contexto.fillStyle = '#CD88AF';
+				//pintamos circulos
+				for (var i = 285; i < 400; i++) {
+					contexto.beginPath();
+					contexto.arc(i, 106, 40, 0, Math.PI * 2, false);
+					contexto.fill();
+				}
+				//pintamos triangulo
+				contexto.beginPath();
+				contexto.moveTo(226, 166);
+				// Define el punto inicial
+				contexto.lineTo(253, 109);
+				// Define el punto final de la linea
+				contexto.lineTo(263, 135);
+				contexto.fill();
+				//rellena del color establecido y cierra la figura si estaba abierta
+
+			}
+
+			function escribir1() {
+				bocadillo();
+				contexto.textAlign = 'center';
+				//alineacion del texto
+				contexto.fillStyle = '#000';
+
+				contexto.font = "30px sans-serif";
+				contexto.lineWidth = 1;
+
+				//uso un gradiente como color de letra
+
+				contexto.fillText("Hola chicos", 339, 106);
+
+				//Letrasrellenas
+
+			}
+
+			function escribir2() {
+				bocadillo();
+				contexto.fillStyle = '#000';
+				contexto.textAlign = 'center';
+				//alineacion del texto
+
+				contexto.font = "30px sans-serif";
+				contexto.lineWidth = 1;
+
+				//uso un gradiente como color de letra
+
+				contexto.fillText("Esto está ...", 339, 106);
+				//Letrasrellenas
+
+			}
+
+			function escribir3() {
+				bocadillo();
+				contexto.fillStyle = '#000';
+				contexto.textAlign = 'center';
+				//alineacion del texto
+
+				contexto.font = "30px sans-serif";
+				contexto.lineWidth = 2;
+
+				//uso un gradiente como color de letra
+
+				contexto.fillText("¡RICO, RICO!", 339, 106);
+				//Letrasrellenas
+
+			}
+
+			function mensaje() {
+				setTimeout(escribir1, 1000);
+				setTimeout(escribir2, 4000);
+				setTimeout(escribir3, 7000);
+
+			}
+
+		</script>
+	</head>
+
+	<body>
+		<div id="contenedor">
+			<header>
+				<!--creo un mapa de imagenes para seleccionar el logo como enlace al inicio-->
+
+				<img src="img/titulo1.png" width="876" height="150" border="0" usemap="#map" />
+
+				<map name="map">
+					<!-- #$-:Image map file created by GIMP Image Map plug-in -->
+					<!-- #$-:GIMP Image Map plug-in by Maurits Rijk -->
+					<!-- #$-:Please do not edit lines starting with "#$" -->
+					<!-- #$VERSION:2.3 -->
+					<!-- #$AUTHOR:Estela -->
+					<area shape="rect" coords="2,1,151,147" alt="Inicio" href="index.html" />
+				</map>
+			</header>
+			<nav>
+				<ul>
+					<li>
+						<a href="index.html">Inicio</a>
+
+					</li>
+
+					<li >
+						<a href="recetas.html">Recetas</a>
+
+					</li >
+
+					<li class="lugar">
+						<a class="lugar">Mini-Chef</a>
+
+					</li>
+
+					<li >
+						<a href="tablas.html">Tablas</a>
+
+					</li>
+
+					<li >
+						<a href="contacto.html">Contacto</a>
+
+					</li>
+
+				</ul>
+			</nav>
+			<div id="estoy">
+				<span>Estas en: <a href="index.html" >Inicio ></a> Mini-Chef ></span>
+			</div>
+
+			<div id="contenido">
+				<div class="col-1">
+					<div>
+						<canvas id="micanvas" width="500" height="300">
+							Actualice su navegador.
+						</canvas>
+
+					</div>
+					<div class="section">
+						<h2 class="titulo ninos">Tus Recetas</h2>
+						<ul  class="icono recetas ninos">
+							<li>
+								<a target="" href="espumoso_limon.html">Espumoso de Limon</a>
+
+							</li>
+							<li>
+								<a target="" href="vaso_quesocrema.html">Vasos Queso Crema con Mermelada</a>
+
+							</li>
+
+							<li>
+								<a target="" href="palmeritas_azucar.html">Palmeritas con Azucar</a>
+
+							</li>
+							<li>
+								<a target="" href="sanwich_pizza.html">Sandwich Pizza</a>
+
+							</li>
+							<li>
+								<a target="" href="hojaldres_sanvalentin.html">Hojaldres de San Valentin</a>
+
+							</li>
+							<li>
+								<a target="" href="espaguetis_salchichas.html">Espaguetis con Salchichas</a>
+
+							</li>
+						</ul>
+
+					</div>
+				</div>
+				<div class="col-2">
+					<div class="section">
+						<h3 id="fecha"></h3>
+
+						<!--se utiliza un sprite para mostrar los iconos de las redes-->
+						<div id="redsocial">
+							<p>
+								<a target="_blank" href="http://www.youtube.com/?gl=ES&hl=es"><img id="youtube" src="img/pixel.png"/></a><a target="_blank" href="https://es-es.facebook.com/"><img id="facebook" src="img/pixel.png"/></a><a target="_blank" href="https://twitter.com/"><img id="twitter" src="img/pixel.png"/></a><a target="_blank" href="https://www.google.es/"><img id="google" src="img/pixel.png"/></a><a target="_blank" href="http://es.yahoo.com/"><img id="yahoo" src="img/pixel.png"/></a>
+							</p>
+						</div>
+
+					</div>
+					<div class="section">
+						<h2>Enlaces de interes</h2>
+						<ul class="listainteres icono">
+							<li>
+								<a target="_blank" href="http://www.pequerecetas.com/receta/recetas-cocina-para-ninos/">Cocina facil para niños</a>
+							</li>
+							<li>
+								<a target="_blank" href="http://www.serpadres.es/alimentacion/recetas-ninos/42450.html">Recetas para cocinar con niños</a>
+							</li>
+							<li>
+								<a target="_blank" href="http://www.recetin.com/">Un blog dedicado a la cocina para niños</a>
+							</li>
+
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+
+			<footer class="impresion">
+				<span>La Cocina de Estela &copy;</span>
+			</footer>
+			<footer class="pantalla">
+				<div class="mapa">
+					<div id="columna1">
+						<dl>
+							<dt>
+								<a href="index.html">INICIO</a>
+							</dt>
+							<dt>
+								<a href="recetas.html">RECETAS</a>
+							</dt>
+							<dl>
+								<dt>
+									<a href="primeros.html">PRIMEROS</a>
+								</dt>
+								<dd>
+									<a target="" href="patatas_asadas.html">Patatas Asadas</a>
+								</dd>
+								<dd>
+									<a target="" href="coliflor_gratinada.html">Coliflor Gratinada</a>
+								</dd>
+								<dd>
+									<a target="" href="arroz_cubana.html">Arroz a la Cubana</a>
+								</dd>
+
+								<dd>
+									<a target="" href="macarrones_atun.html">Macarrones con Atun</a>
+								</dd>
+
+								<dd>
+									<a target="" href="espaguetis_salchichas.html">Espaguetis con Salchichas</a>
+
+								</dd>
+								<dt>
+									<a href="segundos.html">SEGUNDOS</a>
+								</dt>
+								<dd>
+									<a target="" href="lomo_mielmostaza.html">Lomo a la Miel y Mostaza</a>
+								</dd>
+
+								<dd>
+									<a target="" href="chicharro_horno.html">Chicharro al Horno con patatas</a>
+								</dd>
+								<dd>
+									<a target="" href="pollo_ajillochampi.html">Pollo al Ajillo con Champiñones</a>
+
+								</dd>
+
+								<dd>
+									<a target="" href="merluza_rebozada.html">Merluza Rebozada</a>
+
+								</dd>
+
+								<dd>
+									<a target="" href="sanwich_pizza.html">Sandwich Pizza</a>
+
+								</dd>
+								<dt>
+									<a href="postres.html">POSTRES</a>
+								</dt>
+								<dd>
+									<a target="" href="lomo_mielmostaza.html">Lomo a la Miel y Mostaza</a>
+								</dd>
+
+								<dd>
+									<a target="" href="chicharro_horno.html">Chicharro al Horno con patatas</a>
+								</dd>
+								<dd>
+									<a target="" href="pollo_ajillochampi.html">Pollo al Ajillo con Champiñones</a>
+
+								</dd>
+
+								<dd>
+									<a target="" href="merluza_rebozada.html">Merluza Rebozada</a>
+
+								</dd>
+
+								<dd>
+									<a target="" href="sanwich_pizza.html">Sandwich Pizza</a>
+
+								</dd>
+							</dl>
+						</dl>
+
+					</div>
+					<div id="columna2">
+						<dl>
+
+							<dt>
+								<a href="niños.html">MINI-CHEF</a>
+							</dt>
+							<dd>
+								<a target="" href="espumoso_limon.html">Espumoso de Limon</a>
+
+							</dd>
+							<dd>
+								<a target="" href="vaso_quesocrema.html">Vasos Queso Crema con Mermelada</a>
+
+							</dd>
+
+							<dd>
+								<a target="" href="palmeritas_azucar.html">Palmeritas con Azucar</a>
+
+							</dd>
+							<dd>
+								<a target="" href="sanwich_pizza.html">Sandwich Pizza</a>
+
+							</dd>
+							<dd>
+								<a target="" href="hojaldres_sanvalentin.html">Hojaldres de San Valentin</a>
+
+							</dd>
+							<dd>
+								<a target="" href="espaguetis_salchichas.html">Espaguetis con Salchichas</a>
+
+							</dd>
+
+						</dl>
+					</div>
+					<div id="columna3">
+						<dl>
+							<dt>
+								<a href="tablas.html">TABLAS</a>
+							</dt>
+
+							<dt>
+								<a href="contacto.html">CONTACTO</a>
+							</dt>
+							<dt>
+								Enlaces de interes
+							</dt>
+
+							<dd>
+								<a target="_blank" href="http://www.pequerecetas.com/receta/recetas-cocina-para-ninos/">Cocina facil para niños</a>
+							</dd>
+							<dd>
+								<a target="_blank" href="http://www.serpadres.es/alimentacion/recetas-ninos/42450.html">Recetas para cocinar con niños</a>
+							</dd>
+							<dd>
+								<a target="_blank" href="http://www.recetin.com/">Un blog dedicado a la cocina para niños</a>
+							</dd>
+
+						</dl>
+
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
