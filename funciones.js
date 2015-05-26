@@ -11,6 +11,7 @@ function onBodyLoad()
 	});	 
 
     $('.ov_contenedor_01').css("min-height",(viewport_height)+"px");*/
+	
 }
 
 function onDeviceReady()
@@ -19,6 +20,16 @@ function onDeviceReady()
 	document.addEventListener("backbutton", onBackKeyDown, false);
 	//boton menu
 	document.addEventListener("menubutton", onMenuKeyDown, false);
+	
+	/* fUNCION PARA EL plugin QUE ABRE enlaces externos EN PHONEGAP
+	
+	<gap:plugin name="org.apache.cordova.inappbrowser" /> */
+	
+	$("a[href^='http']").on("click", function(){
+		var mi_href = $(this).attr("href");
+		window.open(mi_href, '_blank', 'location=yes,toolbar=yes');
+	
+	});
 }    
 function onBackKeyDown()
 {
