@@ -25,9 +25,12 @@ function onDeviceReady()
 	
 	<gap:plugin name="org.apache.cordova.inappbrowser" /> */
 	$("a[href^='http']").on("click", function(e){
+		
+		/*ANULAR EL COMPORTAMIENTO POR DEFECTO DEL EVENTO*/
 		e.preventDefault();
+		
 		var mi_href = $(this).attr("href");
-		alert(mi_href);
+		/*ABRE OTRA VENTANA CON BARRA PARA CERRAR*/
 		window.open(mi_href, '_blank', 'location=yes,toolbar=yes');
 	
 	});
