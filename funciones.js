@@ -24,12 +24,14 @@ function onDeviceReady()
 	/* fUNCION PARA EL plugin QUE ABRE enlaces externos EN PHONEGAP
 	
 	<gap:plugin name="org.apache.cordova.inappbrowser" /> */
-	
-	$("a[href^='http']").on("click", function(){
+	$("a[href^='http']").on("click", function(e){
+		e.preventDefault();
 		var mi_href = $(this).attr("href");
+		alert(mi_href);
 		window.open(mi_href, '_blank', 'location=yes,toolbar=yes');
 	
 	});
+	
 }    
 function onBackKeyDown()
 {
